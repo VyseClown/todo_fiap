@@ -7,6 +7,7 @@ class GraphQlObject {
   );
   static AuthLink authLink = AuthLink();
   static Link link = httpLink as Link;
+
   ValueNotifier<GraphQLClient> client = ValueNotifier(
     GraphQLClient(
       cache: InMemoryCache(),

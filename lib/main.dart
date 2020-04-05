@@ -4,17 +4,20 @@ import 'services/graphQldata.dart';
 
 import 'components/todoCard.dart';
 
-void main() => runApp(
-      GraphQLProvider(
-        client: graphQlObject.client,
-        child: CacheProvider(
-          child: MaterialApp(
-            theme: ThemeData.dark(),
-            home: TodoApp(),
-          ),
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    GraphQLProvider(
+      client: graphQlObject.client,
+      child: CacheProvider(
+        child: MaterialApp(
+          theme: ThemeData.dark(),
+          home: TodoApp(),
         ),
       ),
-    );
+    ),
+  );
+}
 
 class TodoApp extends StatelessWidget {
   GraphQLClient client;
