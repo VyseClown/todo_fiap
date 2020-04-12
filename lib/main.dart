@@ -39,14 +39,15 @@ class TodoApp extends StatelessWidget {
                 return AlertDialog(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(8.0))),
-                    title: Text("Add task"),
+                    title: Text("Adicione um objetivo!"),
                     content: Form(
                         child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                           TextField(
                             controller: controller,
-                            decoration: InputDecoration(labelText: "Task"),
+                            decoration:
+                                InputDecoration(labelText: "Economizarei..."),
                           ),
                           Center(
                               child: Padding(
@@ -67,17 +68,20 @@ class TodoApp extends StatelessWidget {
                                         Navigator.pop(context);
                                       },
                                       child: Text(
-                                        "Add",
+                                        "Adicionar",
                                         style: TextStyle(color: Colors.white),
                                       ))))
                         ])));
               });
         },
-        child: Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+          color: Color.fromRGBO(153, 51, 153, 1.0),
+        ),
       ),
       appBar: AppBar(
         centerTitle: true,
-        title: Text("To-Do"),
+        title: Text("Nubank - Nova Feature"),
       ),
       body: Center(
         child: Query(
@@ -89,7 +93,7 @@ class TodoApp extends StatelessWidget {
             //  return Text(result.errors.toString());
             //}
             if (result.loading) {
-              return Text('Loading');
+              return Text('Carregando');
             }
 
             return ListView.builder(
